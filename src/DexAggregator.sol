@@ -65,7 +65,7 @@ contract DexAggregator {
             block.timestamp + 300
              );
         
-        amountOut = amounts[amounts.length - 1];
+        amountOut = amounts[1];
 
     }
 }
