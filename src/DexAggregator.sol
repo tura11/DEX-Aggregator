@@ -57,7 +57,7 @@ contract DexAggregator {
         IERC20(path[0]).approve(router, amountIn);
         
 
-        uitn256[] memory amounts = IUniswapV2Router01(router).swapExactTokensForTokens(
+        uint256[] memory amounts = IUniswapV2Router01(router).swapExactTokensForTokens(
             amountIn,
             amountOutMin,
             path,
@@ -65,8 +65,7 @@ contract DexAggregator {
             block.timestamp + 300
              );
         
-        amountOut = amounts(amounts.length - 1);
+        amountOut = amounts[amounts.length - 1];
 
-    
     }
 }
